@@ -27,20 +27,41 @@
 
     <div class="auth-divider">or</div>
 
-    <div class="auth-social">
-      <a href="feed.html" class="social-link">Continue with Xbox</a>
-      <span class="social-sep">|</span>
-      <a href="feed.html" class="social-link">Steam</a>
+    <div class="platform-btns">
+      <button class="btn-platform btn-xbox" id="xbox-btn">
+        <span class="platform-badge xbox-badge">X</span>
+        Continue with Xbox
+      </button>
+      <button class="btn-platform btn-steam" id="steam-btn">
+        <span class="platform-badge steam-badge">S</span>
+        Continue with Steam
+      </button>
     </div>
 
     <p class="auth-footer">New here? <a href="#">Create account →</a></p>
   </div>
 
   <script>
+    function showToast(msg) {
+      const prev = document.querySelector('.toast');
+      if (prev) prev.remove();
+      const el = Object.assign(document.createElement('div'), {
+        className: 'toast',
+        textContent: msg
+      });
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 2500);
+    }
+
     document.getElementById('login-form').addEventListener('submit', e => {
       e.preventDefault();
       window.location.href = 'feed.html';
     });
+
+    document.getElementById('xbox-btn').addEventListener('click', () =>
+      showToast('Xbox sign-in coming soon'));
+    document.getElementById('steam-btn').addEventListener('click', () =>
+      showToast('Steam sign-in coming soon'));
   </script>
 </body>
 </html>

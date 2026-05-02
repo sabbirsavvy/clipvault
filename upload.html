@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClipVault — Upload</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <span class="logo" onclick="location.href='feed.html'">Clip<span>Vault</span></span>
+    <div class="header-actions">
+      <button class="btn btn-ghost btn-sm" onclick="location.href='feed.html'">← Back</button>
+      <button class="btn btn-ghost btn-sm" id="account-btn">Account ▾</button>
+    </div>
+  </header>
+
+  <main class="upload-main">
+
+    <div class="dropzone" id="dropzone">
+      <div class="dz-icon">🎮</div>
+      <div class="dz-primary">Drag &amp; drop clip here</div>
+      <div class="dz-or">or click to browse</div>
+      <div class="dz-hint">(MP4, MOV, PNG, GIF)</div>
+      <div class="dz-file-chosen" id="dz-file-label"></div>
+      <input type="file" id="file-input" accept=".mp4,.mov,.png,.gif" hidden>
+    </div>
+
+    <form class="upload-form" id="upload-form" novalidate>
+
+      <label class="field-label">
+        Title
+        <input type="text" id="title" placeholder="Insert 2nd Clutch — Valorant">
+      </label>
+
+      <label class="field-label">
+        Game
+        <select id="game">
+          <option value="">Select a game…</option>
+          <option value="Valorant">Valorant</option>
+          <option value="League of Legends">League of Legends</option>
+          <option value="Fortnite">Fortnite</option>
+          <option value="Call of Duty">Call of Duty</option>
+          <option value="Apex Legends">Apex Legends</option>
+          <option value="Other">Other</option>
+        </select>
+      </label>
+
+      <label class="field-label">
+        Tags
+        <input type="text" id="tags" placeholder="#Valorant #clutch #ranked">
+      </label>
+
+      <div>
+        <div class="field-label" style="margin-bottom:0.5rem">Visibility</div>
+        <div class="visibility-wrap">
+          <label class="vis-option">
+            <input type="radio" name="visibility" value="public" checked>
+            <span class="vis-label">🌐 Public</span>
+          </label>
+          <label class="vis-option">
+            <input type="radio" name="visibility" value="private">
+            <span class="vis-label">🔒 Private</span>
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" class="url-toggle-btn" id="url-toggle">
+          Advanced / paste URL ▾
+        </button>
+        <div class="url-field" id="url-field">
+          <label class="field-label" style="margin-top:0.65rem">
+            Blob URL
+            <input type="url" id="blobUrl"
+              placeholder="https://stclipvault.blob.core.windows.net/media/clip.mp4">
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-full btn-lg" id="submit-btn">
+        Upload Clip
+      </button>
+
+      <div class="upload-status" id="upload-status"></div>
+
+    </form>
+  </main>
+
+  <script src="api.js"></script>
+  <script src="upload.js"></script>
+</body>
+</html>

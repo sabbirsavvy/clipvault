@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClipVault — Feed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <span class="logo" onclick="location.href='feed.html'">Clip<span>Vault</span></span>
+    <div class="header-actions">
+      <button class="btn btn-primary btn-sm" onclick="location.href='upload.html'">
+        ↑ Upload
+      </button>
+      <button class="btn btn-ghost btn-sm" id="account-btn">S. Ahmed ▾</button>
+    </div>
+  </header>
+
+  <main class="feed-main">
+    <div class="search-wrap">
+      <svg class="search-icon" width="15" height="15" viewBox="0 0 15 15" fill="none"
+           stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="6.5" cy="6.5" r="4"/>
+        <line x1="9.8" y1="9.8" x2="13.5" y2="13.5"/>
+      </svg>
+      <input type="text" id="search-input" placeholder="Search clips, games, creators...">
+    </div>
+
+    <div class="filter-chips">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="fps">FPS</button>
+      <button class="chip" data-filter="moba">MOBA</button>
+      <button class="chip" data-filter="battle royale">Battle Royale</button>
+    </div>
+
+    <h2 class="section-heading">Trending Clips</h2>
+
+    <div class="clip-grid" id="clip-grid">
+      <div class="grid-loading">Loading clips…</div>
+    </div>
+  </main>
+
+  <script src="api.js"></script>
+  <script src="feed.js"></script>
+</body>
+</html>
