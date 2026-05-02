@@ -1,0 +1,10 @@
+{
+  "name": "clipvault",
+  "version": "1.0.0",
+  "description": "Cloud-native multimedia distribution platform on Azure",
+  "scripts": {
+    "build": "echo No build step required for static site"
+  },
+  "author": "Sabbir Ahmed",
+  "license": "MIT"
+}

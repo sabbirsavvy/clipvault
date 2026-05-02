@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClipVault</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ClipVault</h1>
+        <p>A personal cloud project — multimedia distribution on Azure.</p>
+    </header>
+
+    <main>
+        <section id="upload-section">
+            <h2>Upload a clip</h2>
+            <form id="upload-form">
+                <label>
+                    Title
+                    <input type="text" id="title" required>
+                </label>
+                <label>
+                    Description
+                    <textarea id="description" rows="2"></textarea>
+                </label>
+                <label>
+                    Blob URL
+                    <input type="url" id="blobUrl" placeholder="https://stclipvault.blob.core.windows.net/media/yourfile.mp4" required>
+                </label>
+                <label>
+                    Tags (comma-separated)
+                    <input type="text" id="tags" placeholder="gameplay, valorant, clutch">
+                </label>
+                <button type="submit">Upload Clip</button>
+            </form>
+            <p id="upload-status"></p>
+        </section>
+
+        <section id="feed-section">
+            <h2>All clips</h2>
+            <button id="refresh-btn">Refresh</button>
+            <div id="clip-list">Loading...</div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
