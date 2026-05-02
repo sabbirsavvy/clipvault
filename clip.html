@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClipVault — Clip</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <span class="logo" onclick="location.href='feed.html'">Clip<span>Vault</span></span>
+    <div class="header-actions">
+      <button class="btn btn-ghost btn-sm" onclick="location.href='feed.html'">← Back</button>
+    </div>
+  </header>
+
+  <main class="detail-main">
+
+    <div class="video-wrap" id="video-wrap">
+      <div class="video-placeholder">Loading…</div>
+    </div>
+
+    <div class="meta-card">
+      <div class="meta-clip-title" id="meta-title">—</div>
+      <div class="meta-row">
+        <span class="meta-label">Game</span>
+        <span class="meta-value" id="meta-game">—</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Duration</span>
+        <span class="meta-value" id="meta-duration">—</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Size</span>
+        <span class="meta-value">—</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Views</span>
+        <span class="meta-value" id="meta-views">0</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Likes</span>
+        <span class="meta-value" id="meta-likes">0</span>
+      </div>
+    </div>
+
+    <div class="detail-actions">
+      <button class="btn btn-primary" id="edit-btn">✏ Edit</button>
+      <button class="btn btn-blue"    id="share-btn">🔗 Share</button>
+      <button class="btn btn-red"     id="delete-btn">🗑 Delete</button>
+    </div>
+
+  </main>
+
+  <!-- Edit modal -->
+  <div class="modal-overlay hidden" id="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <span class="modal-title">Edit Clip</span>
+        <button class="modal-close" id="modal-close" type="button">✕</button>
+      </div>
+      <form class="modal-form" id="modal-form" novalidate>
+        <label class="field-label">
+          Title
+          <input type="text" id="modal-title-input">
+        </label>
+        <label class="field-label">
+          Description
+          <textarea id="modal-desc" rows="2" style="resize:vertical"></textarea>
+        </label>
+        <label class="field-label">
+          Tags
+          <input type="text" id="modal-tags" placeholder="#tag1 #tag2 #tag3">
+        </label>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" id="modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary"   id="modal-save">Save changes</button>
+        </div>
+        <div class="modal-status" id="modal-status"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="api.js"></script>
+  <script src="clip.js"></script>
+</body>
+</html>
