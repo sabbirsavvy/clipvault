@@ -1,49 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClipVault</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClipVault — Sign In</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <h1>ClipVault</h1>
-        <p>A personal cloud project — multimedia distribution on Azure.</p>
-    </header>
+<body class="auth-page">
 
-    <main>
-        <section id="upload-section">
-            <h2>Upload a clip</h2>
-            <form id="upload-form">
-                <label>
-                    Title
-                    <input type="text" id="title" required>
-                </label>
-                <label>
-                    Description
-                    <textarea id="description" rows="2"></textarea>
-                </label>
-                <label>
-                    Blob URL
-                    <input type="url" id="blobUrl" placeholder="https://stclipvault.blob.core.windows.net/media/yourfile.mp4" required>
-                </label>
-                <label>
-                    Tags (comma-separated)
-                    <input type="text" id="tags" placeholder="gameplay, valorant, clutch">
-                </label>
-                <button type="submit">Upload Clip</button>
-            </form>
-            <p id="upload-status"></p>
-        </section>
+  <div class="auth-card">
+    <div class="auth-logo-block">
+      <div class="wordmark">Clip<span>Vault</span></div>
+    </div>
 
-        <section id="feed-section">
-            <h2>All clips</h2>
-            <button id="refresh-btn">Refresh</button>
-            <div id="clip-list">Loading...</div>
-        </section>
-    </main>
+    <form class="auth-form" id="login-form" novalidate>
+      <label class="field-label">
+        Email
+        <input type="email" id="email" placeholder="gamer@email.com" autocomplete="email">
+      </label>
+      <label class="field-label">
+        Password
+        <input type="password" id="password" placeholder="••••••••" autocomplete="current-password">
+      </label>
+      <button type="submit" class="btn btn-primary btn-full btn-lg">Sign in</button>
+    </form>
 
-    <script src="app.js"></script>
+    <div class="auth-divider">or</div>
+
+    <div class="auth-social">
+      <a href="feed.html" class="social-link">Continue with Xbox</a>
+      <span class="social-sep">|</span>
+      <a href="feed.html" class="social-link">Steam</a>
+    </div>
+
+    <p class="auth-footer">New here? <a href="#">Create account →</a></p>
+  </div>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', e => {
+      e.preventDefault();
+      window.location.href = 'feed.html';
+    });
+  </script>
 </body>
 </html>
