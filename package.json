@@ -2,8 +2,13 @@
   "name": "clipvault",
   "version": "1.0.0",
   "description": "Cloud-native multimedia distribution platform on Azure",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "build": "echo No build step required for static site"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
   },
   "author": "Sabbir Ahmed",
   "license": "MIT"
