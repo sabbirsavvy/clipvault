@@ -13,7 +13,7 @@ A cloud-native multimedia distribution platform built on Azure.
 ## Local development
 
 ```bash
-cd public
+
 python3 -m http.server 8080
 ```
 
