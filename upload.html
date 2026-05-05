@@ -22,9 +22,16 @@
       <div class="dz-icon">🎮</div>
       <div class="dz-primary">Drag &amp; drop clip here</div>
       <div class="dz-or">or click to browse</div>
-      <div class="dz-hint">(MP4, MOV, PNG, GIF)</div>
+      <div class="dz-hint">(MP4, MOV, PNG, GIF, JPG)</div>
       <div class="dz-file-chosen" id="dz-file-label"></div>
-      <input type="file" id="file-input" accept=".mp4,.mov,.png,.gif" hidden>
+      <input type="file" id="file-input" accept=".mp4,.mov,.png,.gif,.jpg,.jpeg" hidden>
+    </div>
+
+    <div class="file-upload-status" id="file-upload-status" hidden>
+      <div class="fu-state" id="fu-state"></div>
+      <div class="fu-bar-wrap" id="fu-bar-wrap" hidden>
+        <div class="fu-bar" id="fu-bar"></div>
+      </div>
     </div>
 
     <form class="upload-form" id="upload-form" novalidate>

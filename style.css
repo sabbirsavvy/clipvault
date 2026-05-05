@@ -488,6 +488,32 @@ select {
 }
 .dz-file-chosen:empty { display: none; }
 
+.file-upload-status {
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+.fu-state {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 0.45rem;
+}
+.fu-state.success { color: #4ade80; }
+.fu-state.error   { color: #f87171; }
+.fu-bar-wrap {
+  height: 4px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.fu-bar {
+  height: 100%;
+  background: var(--purple);
+  border-radius: 999px;
+  width: 0%;
+  transition: width 0.25s ease;
+}
+
 .upload-form {
   display: flex;
   flex-direction: column;
